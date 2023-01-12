@@ -34,13 +34,13 @@ const shipOffsets = [
 
 const isValidShip = (flatFleetArray, ship, origin, axis) => {
     const currentAxis = axis;
-    const shipLength = Number(ship.length);
+    //const shipLength = Number(ship.length);
     const start = ship[0] + origin;
     const end = ship[shipLength - 1] + origin;
 
     const taken = ship.some((coord) => flatFleetArray.includes(coord + origin)); // ship coords are unique to ships, not present in other ships
 
-    const badHorizontal = 
+    /* const badHorizontal = 
         (start > 9 - shipLength && start <= 9 && end > 9) ||
         (start > 19 - shipLength && start <= 19 && end > 19) ||
         (start > 29 - shipLength && start <= 29 && end > 29) ||
@@ -50,7 +50,8 @@ const isValidShip = (flatFleetArray, ship, origin, axis) => {
         (start > 69 - shipLength && start <= 69 && end > 69) ||
         (start > 79 - shipLength && start <= 79 && end > 79) ||
         (start > 89 - shipLength && start <= 89 && end > 89);
-    
+    */
+   
     const outOfBounds = 
         // added to stop horizontal coords from wrapping
         ship.some((coord) => origin + coord < 0) ||
